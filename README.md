@@ -35,17 +35,15 @@ Built for SEO professionals, content creators, and developers who want to know w
 
 ## 🚀 Installation (30 seconds)
 
-### Method 1 — Drag & Drop (easiest)
-1. Show your browser's **bookmarks bar** (`Ctrl/Cmd + Shift + B`)
-2. Open `bookmarklet.html` from this repo in your browser
-3. **Drag the "🤖 RAG Bot Checker" button** to your bookmarks bar
-4. Done ✅
+1. **Open** [`bookmarklet.js`](./bookmarklet.js) in this repo and **copy the entire contents** (it's a single line starting with `javascript:`)
+2. **Show your bookmarks bar** in your browser: `Ctrl/Cmd + Shift + B`
+3. **Right-click the bookmarks bar** → **Add page** (or **New bookmark**)
+4. Fill in the fields:
+   - **Name:** `🤖 RAG Bot Checker`
+   - **URL:** paste the code you copied
+5. **Save** ✅
 
-### Method 2 — Manual
-1. Right-click your bookmarks bar → **Add page / New bookmark**
-2. **Name:** `🤖 RAG Bot Checker`
-3. **URL:** paste the full contents of `bookmarklet.js` (starts with `javascript:`)
-4. Save
+> ⚠️ Make sure the pasted URL still starts with `javascript:` — some browsers strip this prefix for security. If yours does, just type `javascript:` back in front of the code before saving.
 
 ---
 
@@ -120,8 +118,7 @@ The entire bookmarklet is **~5 KB of readable JavaScript** in `bookmarklet.js`. 
 
 ```
 .
-├── bookmarklet.js      # The bookmarklet source code
-├── bookmarklet.html    # Drag-to-install landing page
+├── bookmarklet.js      # The bookmarklet source code (copy this into a bookmark)
 ├── README.md           # This file
 └── LICENSE             # MIT
 ```
@@ -133,8 +130,8 @@ The entire bookmarklet is **~5 KB of readable JavaScript** in `bookmarklet.js`. 
 The bookmarklet is a single self-contained IIFE. To modify:
 
 1. Edit `bookmarklet.js`
-2. Test by pasting into your browser's DevTools console
-3. Once happy, prepend `javascript:` and use as a bookmark URL
+2. Test by pasting into your browser's DevTools console (without the `javascript:` prefix)
+3. Once happy, ensure it starts with `javascript:` and save as a bookmark URL
 4. Optionally minify with [bookmarkleter](https://chriszarate.github.io/bookmarkleter/)
 
 ---
@@ -155,6 +152,9 @@ A: No. `Google-Extended` only controls Gemini/Vertex AI training. Regular Google
 
 **Q: Why didn't it find a robots.txt?**
 A: The site may not have one (which means everything is allowed by default), or the server returned an HTML error page instead of a 404. The tool warns you in both cases.
+
+**Q: My browser stripped the `javascript:` prefix when I pasted!**
+A: This is a common security feature in Chrome and Firefox. Just type `javascript:` back in front of the pasted code before saving the bookmark.
 
 **Q: Can I add more bots?**
 A: Yes — edit the `UAS` array in `bookmarklet.js` and add `{ua, label, info}` objects.
